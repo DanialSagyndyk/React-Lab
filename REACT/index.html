@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Runtime & Async</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>JavaScript Runtime & Async</h1>
+            <p>Closures, Promises, Async/Await, Event Loop, Tasks and Microtasks</p>
+        </header>
+
+        <section class="card">
+            <h2>Async Tasks</h2>
+
+            <div id="tasks" class="tasks-container"></div>
+
+            <div class="buttons">
+                <button id="runAllBtn">Run All Tasks</button>
+                <button id="sequentialBtn">Run Sequential</button>
+                <button id="concurrentBtn">Run Concurrent</button>
+                <button id="resetBtn">Reset Tasks</button>
+            </div>
+
+            <div id="executionResult" class="result"></div>
+        </section>
+
+        <section class="card">
+            <h2>Event Loop Demo</h2>
+
+            <div class="expected">
+                <h3>Expected Console Output</h3>
+                <pre>
+1. Script start
+2. Async function start
+3. Script end
+4. Promise callback 1
+5. Async function after await
+6. Promise callback 2
+7. Timer 1
+8. Timer 2
+                </pre>
+            </div>
+
+            <button id="eventLoopBtn">Run Event Loop Demo</button>
+
+            <div class="info">
+                <p>
+                    Open the browser Developer Tools → Console to see the
+                    execution order.
+                </p>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>Concepts</h2>
+
+            <div class="concept-grid">
+                <div>
+                    <h3>Closure</h3>
+                    <p>
+                        Each task stores its execution counter inside a closure,
+                        making the counter private.
+                    </p>
+                </div>
+
+                <div>
+                    <h3>Promise</h3>
+                    <p>
+                        Promises simulate asynchronous loading and can either
+                        resolve successfully or reject with an error.
+                    </p>
+                </div>
+
+                <div>
+                    <h3>Async/Await</h3>
+                    <p>
+                        Async functions allow asynchronous code to be written
+                        in a readable sequential style.
+                    </p>
+                </div>
+
+                <div>
+                    <h3>Event Loop</h3>
+                    <p>
+                        The Event Loop moves ready callbacks from queues to the
+                        Call Stack when it becomes available.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
